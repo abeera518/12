@@ -2,6 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=>, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
 <body>
@@ -38,7 +39,10 @@
                 <input type="button" value="CLEAR" onclick="clearScreen()" id="clear" class="clear-button" />
             </div>
         </div>
+    <div class="del"></div>
+        <input type="button" value="Delete" onclick="document.getElementById('result').value = document.getElementById('result').value.slice(0, -1)" class="delete-button" />
     </div>
+
     <form name="myform" id="form1"onsubmit="validationform()">
         Name: <input type="text" name="name" id="name" />
        <input type="submit"value="Submit" />
@@ -84,8 +88,14 @@
         }
         function clearScreen() {
             document.getElementById("result").value = "";
+        } 
+
+      function deleteLastCharacter() {
+            var screenValue = document.getElementById("result").value;
+            document.getElementById("result").value = screenValue.slice(0, -1);
         }   
         
+
     </script>
 </body>
 </html>
