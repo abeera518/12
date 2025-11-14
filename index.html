@@ -1,0 +1,41 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="myform" idd="form1"onsubmit="validationform()">
+        Name: <input type="text" name="name" id="name" />
+       <input type="submit"value="Submit" />
+        
+        <p id="message>"></p>
+    </form>
+    <p>enter number and click ok</p>
+    <input type="number" name="num1" id="num1" max="100" min="10" required>
+    <button type="button" onclick="myfuction()"> click ok</button>
+    <p id="result"></p>
+    <a herf="calculator.html">calculator</a>
+    <script>
+        function validationform(){
+            var x=document.forms["myform"][" firstname"].value;
+            if (x == "") {
+                document.getElementById("message").innerHTML = "Name must be filled out";
+                return false;
+            } else {
+                document.getElementById("message").innerHTML = "Form submitted successfully!";
+            }
+        }
+        //act2
+        function myfunction() {
+            var input=document.getElementById("num1");
+            if(! input.checkValidity()) {
+                document.getElementById("result").innerHTML = input.validationMessage;
+            } else {
+                document.getElementById("result").innerHTML = "you have entered correct number";
+            }
+            
+        }
+    </script>
+</body>
+</html>
